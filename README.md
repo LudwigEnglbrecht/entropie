@@ -38,6 +38,9 @@ OPTIONS
 
   -e, --entropy
     Outputs only the entropy (the number)
+    
+   -o FORMAT, --output=FORMAT
+     Determines how the output is printed. FORMAT can be 'line' or 'csv'
 
 EXAMPLES
   entropie.py -l entropie.py
