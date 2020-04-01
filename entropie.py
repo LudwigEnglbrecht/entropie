@@ -300,24 +300,30 @@ def entropy_local(my_opts):
 
         (buffer, length) = read_from_file(a_file, my_opts)
         i = 0
+        csvstring = ''
         while buffer != '':
             if length > 0:
                 # Creating our probabilty vector
                 probability = buffer_probability_dict(buffer, length)
                 if my_opts.block:
                     if not my_opts.output:
+                        print('hallo1')
+                        csvstring = csvstring + '%s' %(  buffer_shannon_entropy(buffer, length, probability, my_opts) ) + ';'
                         print('%s : %s' % (i, buffer_shannon_entropy(buffer, length, probability, my_opts)))
                     else:
+                        #print('hallo2')
                         print('%s' % buffer_shannon_entropy(buffer, length, probability, my_opts))
                 else:
                     if not my_opts.output:
                         print('%s : %s' % (buffer, buffer_shannon_entropy(buffer, length, probability, my_opts)))
                     else:
+                        #print('hallo')
                         print('%s' % buffer_shannon_entropy(buffer, length, probability, my_opts))
 
             (buffer, length) = read_from_file(a_file, my_opts)
             i = i + 1
 
+        print(csvstring)
         a_file.close()
 
 # End of entropy_local() function
