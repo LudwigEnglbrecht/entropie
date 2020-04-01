@@ -1,7 +1,7 @@
 entropie
 ========
 
-Tool to calculate entropy on files
+Modified tool to calculate entropy on files --- CAUTION: Still still under development!
 
 
 Usage
